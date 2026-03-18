@@ -48,9 +48,9 @@ const Projects = () => {
     <section id="projects" className="section" ref={ref}>
       <div className="premium-container">
         {/* Section Heading - Centered */}
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }} 
-          animate={inView ? { opacity: 1, y: 0 } : {}} 
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
           style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', marginBottom: '4rem' }}
         >
@@ -100,8 +100,8 @@ const Projects = () => {
                 overflow: 'hidden',
                 borderRight: '1px solid rgba(255,255,255,0.06)'
               }}>
-                <img 
-                  src={p.image} 
+                <img
+                  src={p.image}
                   alt={p.title}
                   style={{
                     width: '100%',
@@ -116,7 +116,7 @@ const Projects = () => {
                   onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
                 />
                 <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.6), transparent)', pointerEvents: 'none' }} />
-                
+
                 <div style={{
                   position: 'absolute', inset: 0,
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
