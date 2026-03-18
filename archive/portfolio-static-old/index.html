@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player 1 Portfolio - Overworld</title>
+    <!-- Modern Retro Font -->
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- HUD (Heads Up Display) -->
+    <div class="hud">
+        <div class="hud-item">
+            <span class="hud-label">PLAYER</span>
+            <span class="hud-value">GUEST_01</span>
+        </div>
+        <div class="hud-item hud-center">
+            <span class="hud-title">SELECT A LEVEL</span>
+        </div>
+        <div class="hud-item hud-right">
+            <span class="hud-label">SCORE</span>
+            <span class="hud-value" id="scoreDisplay">00000</span>
+        </div>
+    </div>
+
+    <!-- Map Container -->
+    <div id="game-map">
+
+        <!-- Background Grid Elements (CSS Generated) -->
+        <div class="grid-overlay"></div>
+
+        <!-- SVG Paths for Roads -->
+        <svg class="map-paths" viewBox="0 0 1000 700">
+            <!-- These coordinates will connect the level nodes -->
+            <path d="M 150 550 L 150 400 L 400 400 L 400 250 L 700 250 L 850 250 L 850 450 L 650 450" fill="none"
+                class="road" />
+        </svg>
+
+        <!-- Level Nodes -->
+        <!-- Start Point (Level 0) -->
+        <div class="level-node active-node" id="node-start" data-x="150" data-y="550" data-level="start">
+            <div class="node-marker start-marker">HOME</div>
+        </div>
+
+        <!-- Level 1: About -->
+        <div class="level-node" id="node-about" data-x="400" data-y="400" data-level="about">
+            <div class="node-marker">1</div>
+            <div class="node-label">Origin Story</div>
+        </div>
+
+        <!-- Level 2: Skills -->
+        <div class="level-node" id="node-skills" data-x="400" data-y="250" data-level="skills">
+            <div class="node-marker">2</div>
+            <div class="node-label">Inventory</div>
+        </div>
+
+        <!-- Level 3: Projects -->
+        <div class="level-node" id="node-projects" data-x="700" data-y="250" data-level="projects">
+            <div class="node-marker">3</div>
+            <div class="node-label">Quests completed</div>
+        </div>
+
+        <!-- Level 4: Contact -->
+        <div class="level-node" id="node-contact" data-x="850" data-y="450" data-level="contact">
+            <div class="node-marker">4</div>
+            <div class="node-label">Comms Link</div>
+        </div>
+
+        <!-- The Vehicle Player -->
+        <div id="player-vehicle" style="transform: translate(150px, 550px);">
+            <!-- CSS drawn car -->
+            <div class="car-body"></div>
+            <div class="wheel wheel-tl"></div>
+            <div class="wheel wheel-tr"></div>
+            <div class="wheel wheel-bl"></div>
+            <div class="wheel wheel-br"></div>
+        </div>
+
+    </div>
+
+    <!-- Modals for Level Content -->
+    <div class="overlay" id="modal-overlay"></div>
+
+    <!-- Modals Container -->
+    <div class="modals-container">
+
+        <!-- Welcome Dialog (Auto triggers) -->
+        <div class="game-modal" id="modal-start">
+            <button class="close-btn" aria-label="Close modal"><i class="fas fa-times"></i></button>
+            <div class="modal-header">
+                <h2>SYSTEM_READY</h2>
+            </div>
+            <div class="modal-body typewriter-container">
+                <p>Welcome to my interactive portfolio.</p>
+                <p>I am a Software Engineer crafting digital worlds.</p>
+                <p class="highlight blink">> CLICK ANY LEVEL NODE ON THE MAP TO NAVIGATE.</p>
+            </div>
+        </div>
+
+        <!-- About Modal -->
+        <div class="game-modal" id="modal-about">
+            <button class="close-btn" aria-label="Close modal"><i class="fas fa-times"></i></button>
+            <div class="modal-header">
+                <h2>LEVEL 1: ORIGIN STORY</h2>
+            </div>
+            <div class="modal-body">
+                <div class="profile-layout">
+                    <div class="avatar-box placeholder-avatar"></div>
+                    <div class="profile-text">
+                        <h3>CLASS: DEVELOPER</h3>
+                        <p>I thrive on turning complex logic into elegant solutions. With over 3 years of grinding
+                            experience points in modern web technologies, I build highly scalable applications.</p>
+                        <ul class="stats-list">
+                            <li><span>HP:</span> [██████████] 100/100</li>
+                            <li><span>COFFEE:</span> [████████░░] 80/100</li>
+                            <li><span>BUGS FIXED:</span> 999+</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills Modal -->
+        <div class="game-modal" id="modal-skills">
+            <button class="close-btn" aria-label="Close modal"><i class="fas fa-times"></i></button>
+            <div class="modal-header">
+                <h2>LEVEL 2: INVENTORY</h2>
+            </div>
+            <div class="modal-body">
+                <div class="inventory-grid">
+                    <div class="inv-item">
+                        <i class="fab fa-js text-accent"></i>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="inv-item">
+                        <i class="fab fa-react text-accent"></i>
+                        <span>React.js</span>
+                    </div>
+                    <div class="inv-item">
+                        <i class="fab fa-node-js text-accent"></i>
+                        <span>Node.js</span>
+                    </div>
+                    <div class="inv-item">
+                        <i class="fab fa-python text-accent"></i>
+                        <span>Python</span>
+                    </div>
+                    <div class="inv-item">
+                        <i class="fas fa-database text-accent"></i>
+                        <span>SQL/NoSQL</span>
+                    </div>
+                    <div class="inv-item">
+                        <i class="fab fa-aws text-accent"></i>
+                        <span>Cloud AWS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projects Modal -->
+        <div class="game-modal" id="modal-projects">
+            <button class="close-btn" aria-label="Close modal"><i class="fas fa-times"></i></button>
+            <div class="modal-header">
+                <h2>LEVEL 3: QUESTS COMPLETED</h2>
+            </div>
+            <div class="modal-body">
+                <div class="quest-list">
+
+                    <div class="quest-card">
+                        <div class="quest-icon"></div>
+                        <div class="quest-details">
+                            <h4>E-Commerce Platform</h4>
+                            <p>Full-stack serverless Next.js application handling live transactions.</p>
+                            <span class="tech-badge">Next.js + Stripe</span>
+                        </div>
+                    </div>
+
+                    <div class="quest-card">
+                        <div class="quest-icon alert-icon"></div>
+                        <div class="quest-details">
+                            <h4>Real-time Dashboard</h4>
+                            <p>Websocket-driven data visualization for remote IoT devices.</p>
+                            <span class="tech-badge">React + Socket.io</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Modal -->
+        <div class="game-modal" id="modal-contact">
+            <button class="close-btn" aria-label="Close modal"><i class="fas fa-times"></i></button>
+            <div class="modal-header">
+                <h2>LEVEL 4: COMMS LINK</h2>
+            </div>
+            <div class="modal-body">
+                <p>Initiate a direct transmission to my inbox.</p>
+                <form id="contactForm" class="retro-form">
+                    <input type="text" placeholder="PLAYER NAME" required>
+                    <input type="email" placeholder="RETURN FREQUENCY (EMAIL)" required>
+                    <textarea placeholder="ENTER MESSAGE TRANSMISSION..." rows="4" required></textarea>
+                    <button type="submit" class="btn-retro">SEND TRANSMISSION</button>
+                </form>
+                <div class="social-terminals">
+                    <a href="#"><i class="fab fa-github"></i> GITHUB</a>
+                    <a href="#"><i class="fab fa-linkedin"></i> LINKEDIN</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
