@@ -141,20 +141,21 @@ const Projects = () => {
                 />
                 <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.6), transparent)', pointerEvents: 'none' }} />
 
-                <div style={{
+                <a href={p.demo || p.github} target="_blank" rel="noreferrer" style={{
                   position: 'absolute', inset: 0,
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
                   background: 'rgba(0,0,0,0.2)',
-                  zIndex: 0
+                  zIndex: 10,
+                  cursor: 'pointer'
                 }}>
-                  <div style={{ padding: '0.8rem', background: 'rgba(255,255,255,0.05)', backdropFilter: 'blur(4px)', borderRadius: '50%', border: '1px solid rgba(255,255,255,0.1)' }}>
+                  <motion.div whileHover={{ scale: 1.1 }} style={{ padding: '0.8rem', background: 'rgba(255,255,255,0.05)', backdropFilter: 'blur(4px)', borderRadius: '50%', border: '1px solid rgba(255,255,255,0.1)' }}>
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke={p.color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
                       <polyline points="15 3 21 3 21 9" />
                       <line x1="10" y1="14" x2="21" y2="3" />
                     </svg>
-                  </div>
-                </div>
+                  </motion.div>
+                </a>
               </div>
 
               {/* Card Content - Compact padding */}
