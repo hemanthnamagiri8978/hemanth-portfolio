@@ -3,6 +3,30 @@ import { motion, useInView } from 'framer-motion';
 
 const PROJECTS = [
   {
+    title: 'Hand2Hand',
+    category: 'Full Stack',
+    date: 'May 2024',
+    description: 'A premium P2P campus delivery network built with Vite, React, Node.js, and MongoDB. It matches students walking across campus with peer delivery tasks. Senders post packages, while walkers accept missions, coordinate via real-time WebSocket chat, and complete handoffs securely using OTP codes.',
+    tech: ['Vite', 'React', 'Node.js', 'MongoDB', 'Socket.IO'],
+    color: '#0D9488',
+    github: 'https://github.com/hemanthnamagiri8978/Hand2Hand',
+    demo: null,
+    image: 'https://images.pexels.com/photos/6169046/pexels-photo-6169046.jpeg?auto=compress&cs=tinysrgb&w=800', // Package delivery
+    gradient: 'linear-gradient(135deg, #060b1a 0%, #0d9488 100%)'
+  },
+  {
+    title: 'AI Driver Monitoring & ADAS',
+    category: 'Machine Learning',
+    date: 'April 2024',
+    description: 'AI-powered Driver Monitoring and ADAS Emergency Safety System that detects driver fatigue in real time using computer vision, analyzes surrounding traffic through simulated radar systems, and autonomously performs safe highway emergency parking maneuvers.',
+    tech: ['Python', 'OpenCV', 'MediaPipe', 'Computer Vision'],
+    color: '#ff4b4b',
+    github: 'https://github.com/hemanthnamagiri8978/AI-Driver-Monitoring-ADAS',
+    demo: null,
+    image: 'https://images.pexels.com/photos/1033142/pexels-photo-1033142.jpeg?auto=compress&cs=tinysrgb&w=800', // Driving/Road
+    gradient: 'linear-gradient(135deg, #1f0b0b 0%, #ff4b4b 100%)'
+  },
+  {
     title: 'PrepSync',
     category: 'Full Stack',
     date: 'February 2025',
@@ -37,30 +61,6 @@ const PROJECTS = [
     demo: null,
     image: 'https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=800', // Real-Life Engineering/UI Design
     gradient: 'linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%)'
-  },
-  {
-    title: 'Hand2Hand',
-    category: 'Full Stack',
-    date: 'May 2024',
-    description: 'A premium P2P campus delivery network built with Vite, React, Node.js, and MongoDB. It matches students walking across campus with peer delivery tasks. Senders post packages, while walkers accept missions, coordinate via real-time WebSocket chat, and complete handoffs securely using OTP codes.',
-    tech: ['Vite', 'React', 'Node.js', 'MongoDB', 'Socket.IO'],
-    color: '#0D9488',
-    github: 'https://github.com/hemanthnamagiri8978/Hand2Hand',
-    demo: null,
-    image: 'https://images.pexels.com/photos/6169046/pexels-photo-6169046.jpeg?auto=compress&cs=tinysrgb&w=800', // Package delivery
-    gradient: 'linear-gradient(135deg, #060b1a 0%, #0d9488 100%)'
-  },
-  {
-    title: 'AI Driver Monitoring & ADAS',
-    category: 'Machine Learning',
-    date: 'April 2024',
-    description: 'AI-powered Driver Monitoring and ADAS Emergency Safety System that detects driver fatigue in real time using computer vision, analyzes surrounding traffic through simulated radar systems, and autonomously performs safe highway emergency parking maneuvers.',
-    tech: ['Python', 'OpenCV', 'MediaPipe', 'Computer Vision'],
-    color: '#ff4b4b',
-    github: 'https://github.com/hemanthnamagiri8978/AI-Driver-Monitoring-ADAS',
-    demo: null,
-    image: 'https://images.pexels.com/photos/1033142/pexels-photo-1033142.jpeg?auto=compress&cs=tinysrgb&w=800', // Driving/Road
-    gradient: 'linear-gradient(135deg, #1f0b0b 0%, #ff4b4b 100%)'
   },
 ];
 
