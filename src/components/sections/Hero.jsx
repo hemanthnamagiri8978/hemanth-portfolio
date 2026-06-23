@@ -158,7 +158,7 @@ const Hero = () => {
               position: 'relative'
             }}>
               <img
-                src="/profile.jpg"
+                src="/profile2.jpg"
                 alt="Namagiri Hemanth Kumar"
                 style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'brightness(1.05) contrast(1.05)' }}
               />
