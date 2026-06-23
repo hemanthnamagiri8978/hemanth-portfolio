@@ -11,7 +11,7 @@ const PROJECTS = [
     color: '#0D9488',
     github: 'https://github.com/hemanthnamagiri8978/Hand2Hand',
     demo: null,
-    image: 'https://images.pexels.com/photos/6169046/pexels-photo-6169046.jpeg?auto=compress&cs=tinysrgb&w=800', // Package delivery
+    image: '/projects/hand2hand.png',
     gradient: 'linear-gradient(135deg, #060b1a 0%, #0d9488 100%)'
   },
   {
@@ -23,7 +23,7 @@ const PROJECTS = [
     color: '#ff4b4b',
     github: 'https://github.com/hemanthnamagiri8978/AI-Driver-Monitoring-ADAS',
     demo: null,
-    image: 'https://images.pexels.com/photos/1033142/pexels-photo-1033142.jpeg?auto=compress&cs=tinysrgb&w=800', // Driving/Road
+    image: '/projects/adas.png',
     gradient: 'linear-gradient(135deg, #1f0b0b 0%, #ff4b4b 100%)'
   },
   {
