@@ -82,7 +82,7 @@ const Hero = () => {
           <motion.div variants={fadeUp} initial="hidden" animate="visible" custom={3} className="hero-actions" style={{ display: 'flex', gap: '1.2rem', alignItems: 'center', flexWrap: 'wrap' }}>
             {/* Download Resume Button */}
             <motion.a 
-              href="/resume.pdf"
+              href="https://drive.google.com/file/d/1Rbjwo-LbhSDvbWBAsygRRx29EwHU5GJ5/view?usp=drive_link"
               target="_blank"
               rel="noreferrer"
               className="btn-primary"

@@ -30,7 +30,7 @@ const Navbar = () => {
         {/* Desktop Nav */}
         <nav className="desktop-only" style={{ display: 'flex', gap: '0.2rem' }}>
           {LINKS.map(l => {
-            const href = l === 'Resume' ? '/resume.pdf' : `#${l.toLowerCase()}`;
+            const href = l === 'Resume' ? 'https://drive.google.com/file/d/1Rbjwo-LbhSDvbWBAsygRRx29EwHU5GJ5/view?usp=drive_link' : `#${l.toLowerCase()}`;
             const target = l === 'Resume' ? '_blank' : undefined;
             return (
               <a key={l} href={href} target={target} style={{
@@ -75,7 +75,7 @@ const Navbar = () => {
             gap: '1.2rem', padding: '6rem 2rem 2rem 2rem', zIndex: 1000, overflowY: 'auto'
           }}>
             {LINKS.map(l => {
-              const href = l === 'Resume' ? '/resume.pdf' : `#${l.toLowerCase()}`;
+              const href = l === 'Resume' ? 'https://drive.google.com/file/d/1Rbjwo-LbhSDvbWBAsygRRx29EwHU5GJ5/view?usp=drive_link' : `#${l.toLowerCase()}`;
               const target = l === 'Resume' ? '_blank' : undefined;
               return (
                 <a 
